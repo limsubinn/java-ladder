@@ -22,7 +22,7 @@ public class LadderTest {
         ladder.drawLine(1, 1);
         ladder.drawLine(2, 2);
         ladder.drawLine(3, 2);
-        assertEquals(3, ladder.run(3));
+        assertEquals(2, ladder.run(1));
     }
 
     @Test

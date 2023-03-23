@@ -14,20 +14,27 @@ public class Ladder {
         rows[row][col] = 1;
         rows[row][col+1] = -1;
     }
-    
+
     public int run(int selection) {
         for (int i=1; i<rows.length; i++) {
-            if (rows[i][selection] == 1) {
-                selection += 1;
-            } else if (rows[i][selection] == -1) {
-                selection -= 1;
-            }
+            selection = getSelection(selection, i);
+        }
 
-            if (selection < 1) {
-                selection = rows[i].length;
-            } else if (selection > rows[i].length) {
-                selection = 1;
-            }
+        return selection;
+    }
+
+    private int getSelection(int selection, int row) {
+        switch (rows[row][selection]) {
+            case 1: selection++; break;
+            case -1: selection--; break;
+            case 0: return selection;
+        }
+
+        if (selection < 1) {
+            return rows[row].length;
+        }
+        if (selection > rows[row].length) {
+            return 1;
         }
 
         return selection;
