@@ -5,7 +5,7 @@ public class Ladder {
     private final Row[] rows;
 
     public Ladder(int row, int numberOfPerson) {
-        validateLadderRow(row);
+        validateRow(row);
         rows = new Row[row+1];
         for (int i=1; i<=row; i++) {
             rows[i] = new Row(numberOfPerson);
@@ -25,7 +25,7 @@ public class Ladder {
         return selection;
     }
 
-    private void validateLadderRow(int row) {
+    private void validateRow(int row) {
         if (row < 1) {
             throw new IllegalArgumentException("높이가 1보다 작은 수입니다.");
         }

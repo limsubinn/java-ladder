@@ -26,9 +26,17 @@ public class LadderTest {
     }
 
     @Test
-    @DisplayName("음수 사다리 높이 생성 시 에러")
-    void minusLadderRow() {
+    @DisplayName("1보다 작은 사다리 높이 생성 시 에러")
+    void outOfRangeRow() {
+        assertThrows(IllegalArgumentException.class,() -> new Ladder(0, 3));
         assertThrows(IllegalArgumentException.class,() -> new Ladder(-1, 3));
+    }
+
+    @Test
+    @DisplayName("1보다 작은 사다리 줄 생성 시 에러")
+    void outOfRangeNumberOfPerson() {
+        assertThrows(IllegalArgumentException.class,() -> new Ladder(3, -1));
+        assertThrows(IllegalArgumentException.class,() -> new Ladder(3, 0));
     }
 
     @Test
