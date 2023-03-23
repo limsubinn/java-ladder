@@ -8,10 +8,10 @@ public class Row {
         this.cols = new int[numberOfPerson+1];
     }
 
-    public void drawLine(int col) {
-        validateDrawLineCol(col);
-        cols[col] = 1;
-        cols[col+1] = -1;
+    public void drawLine(int y) {
+        validatePositionY(y);
+        cols[y] = 1;
+        cols[y+1] = -1;
     }
 
     public int getSelection(int selection) {
@@ -37,8 +37,8 @@ public class Row {
         }
     }
 
-    private void validateDrawLineCol(int col) {
-        if ((col <= 0) || (col >= cols.length - 1)) {
+    private void validatePositionY(int y) {
+        if ((y <= 0) || (y >= cols.length - 1)) {
             throw new IllegalArgumentException("라인을 만들 줄이 사다리 라인 개수의 범위 안에 있어야 합니다.");
         }
     }

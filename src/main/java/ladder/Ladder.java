@@ -12,9 +12,9 @@ public class Ladder {
         }
     }
 
-    public void drawLine(int row, int col) {
-        validateDrawLineRow(row);
-        rows[row].drawLine(col);
+    public void drawLine(int x, int y) {
+        validatePositionX(x);
+        rows[x].drawLine(y);
     }
 
     public int run(int selection) {
@@ -31,8 +31,8 @@ public class Ladder {
         }
     }
 
-    private void validateDrawLineRow(int row) {
-        if ((row <= 0) || (row >= rows.length)) {
+    private void validatePositionX(int x) {
+        if ((x <= 0) || (x >= rows.length)) {
             throw new IllegalArgumentException("라인을 만들 행이 사다리 높이의 범위 안에 있어야 합니다.");
         }
     }
