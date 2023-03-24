@@ -21,13 +21,6 @@ public class Row {
             case 0: return selection;
         }
 
-        if (selection < 1) {
-            return cols.length;
-        }
-        if (selection > cols.length) {
-            return 1;
-        }
-
         return selection;
     }
 
