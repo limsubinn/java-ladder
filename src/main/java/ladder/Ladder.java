@@ -11,21 +11,21 @@ public class Ladder {
         }
     }
 
-    public void drawLine(int x, int y) {
-        validatePositionX(x);
-        rows[x].drawLine(y);
+    public void drawLine(Position x, Position y) {
+        validatePositionSize(x);
+        rows[x.getPosition()].drawLine(y);
     }
 
-    public int run(int selection) {
+    public int run(Position position) {
         for (int i=1; i<rows.length; i++) {
-            selection = rows[i].getSelection(selection);
+            rows[i].nextPosition(position);
         }
 
-        return selection;
+        return position.getPosition();
     }
 
-    private void validatePositionX(int x) {
-        if ((x <= 0) || (x >= rows.length)) {
+    private void validatePositionSize(Position x) {
+        if (!x.isSmaller(rows.length)) {
             throw new IllegalArgumentException("라인을 만들 행이 사다리 높이의 범위 안에 있어야 합니다.");
         }
     }
