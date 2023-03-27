@@ -11,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class LadderTest {
 
-    Ladder ladder;
+    LadderGame ladder;
 
     @BeforeEach
     void init() {
         NaturalNumber row = createNaturalNumber(3);
         NaturalNumber numberOfPerson = createNaturalNumber(3);
-        ladder = new Ladder(row, numberOfPerson);
+        ladder = new LadderGame(row, numberOfPerson);
     }
 
     @Test
