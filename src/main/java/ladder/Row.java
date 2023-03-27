@@ -6,9 +6,8 @@ import static ladder.Direction.RIGHT;
 public class Row {
     int[] row;
 
-    public Row(int numberOfPerson) {
-        validateNumberOfPerson(numberOfPerson);
-        this.row = new int[numberOfPerson+1];
+    public Row(NaturalNumber numberOfPerson) {
+        this.row = new int[numberOfPerson.getNumber()+1];
     }
 
     public void drawLine(int y) {
@@ -25,12 +24,6 @@ public class Row {
         }
 
         return selection;
-    }
-
-    private void validateNumberOfPerson(int numberOfPerson) {
-        if (numberOfPerson < 1) {
-            throw new IllegalArgumentException("참가자 수가 1보다 작은 수입니다.");
-        }
     }
 
     private void validatePositionY(int y) {
