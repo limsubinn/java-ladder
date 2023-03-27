@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ladder.LadderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-27T14:35:04" hostname="imsubin-ui-MacBookAir.local" time="0.043">
+<testsuite name="ladder.LadderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-27T14:52:11" hostname="imsubin-ui-MacBookAir.local" time="0.04">
   <properties/>
-  <testcase name="1보다 작은 파라미터 값이 들어오면 에러" classname="ladder.LadderTest" time="0.032"/>
-  <testcase name="사다리게임" classname="ladder.LadderTest" time="0.003"/>
-  <testcase name="사다리 범위를 벗어난 라인 생성 시 에러" classname="ladder.LadderTest" time="0.003"/>
+  <testcase name="1보다 작은 파라미터 값이 들어오면 에러" classname="ladder.LadderTest" time="0.03"/>
+  <testcase name="사다리게임" classname="ladder.LadderTest" time="0.002"/>
+  <testcase name="사다리 범위를 벗어난 라인 생성 시 에러" classname="ladder.LadderTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
