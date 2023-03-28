@@ -1,5 +1,9 @@
 package ladder;
 
+import static ladder.LadderPosition.createLadderPosition;
+import static ladder.Node.*;
+import static ladder.Position.createPosition;
+
 public class Row {
 
     Node[] nodes;
@@ -7,33 +11,25 @@ public class Row {
     public Row(NaturalNumber numberOfPerson) {
         nodes = new Node[numberOfPerson.getNumber()+1];
         for (int i=0; i<=numberOfPerson.getNumber(); i++) {
-            nodes[i] = Node.createCenterNode();
+            nodes[i] = createCenterNode();
         }
     }
 
     public void drawLine(Position y) {
         validatePosition(y);
-        nodes[y.getPosition()] = Node.createRightNode();
-        nodes[y.getNextPosition()] = Node.createLeftNode();
+        nodes[y.getPosition()] = createRightNode();
+        nodes[y.getNextPosition()] = createLeftNode();
     }
 
     public void nextPosition(Position position) {
-//        System.out.println("before");
-//        System.out.println(position.getPosition());
-
         if (nodes[position.getPosition()].isLeft()) {
             position.minus();
-//            System.out.println("after");
-//            System.out.println(position.getPosition());
             return;
         }
 
         if (nodes[position.getPosition()].isRight()) {
             position.plus();
         }
-
-//        System.out.println("after");
-//        System.out.println(position.getPosition());
     }
 
     private void validatePositionSize(Position y) {
@@ -42,14 +38,19 @@ public class Row {
         }
     }
 
-    public String rowToString(Position position, int row, int now) {
+    public String rowToString(LadderPosition ladderPosition, Position x) {
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i=1; i<nodes.length; i++) {
             stringBuilder.append(nodes[i].getNodeDirection());
-            if (position.isEqual(i) && row == now) {
+
+            Position y = createPosition(i);
+            LadderPosition currentPosition = createLadderPosition(x, y);
+
+            if (ladderPosition.equals(currentPosition)) {
                 stringBuilder.append("*");
             }
+
             stringBuilder.append(" ");
         }
 

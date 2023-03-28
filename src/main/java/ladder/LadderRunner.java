@@ -1,5 +1,7 @@
 package ladder;
 
+import static ladder.LadderPosition.createLadderPosition;
+
 public class LadderRunner {
 
     Row[] rows;
@@ -10,23 +12,25 @@ public class LadderRunner {
 
     public int run(Position position) {
         for (int i=1; i<rows.length; i++) {
+            Position x = Position.createPosition(i);
+            LadderPosition ladderPosition = createLadderPosition(x, position);
 
             System.out.println("Before");
-            printRows(position, i);
+            printRows(ladderPosition);
 
             rows[i].nextPosition(position);
 
             System.out.println("After");
-            printRows(position, i);
-
+            printRows(ladderPosition);
         }
 
         return position.getPosition();
     }
 
-    private void printRows(Position position, int row) {
+    private void printRows(LadderPosition ladderPosition) {
         for (int i=1; i<rows.length; i++) {
-            System.out.println(rows[i].rowToString(position, row, i));
+            Position x = Position.createPosition(i);
+            System.out.println(rows[i].rowToString(ladderPosition, x));
         }
     }
 }

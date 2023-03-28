@@ -26,6 +26,9 @@ public class LadderTest {
         ladder.drawLine(createPosition(2), createPosition(2));
         ladder.drawLine(createPosition(3), createPosition(2));
         assertEquals(2, ladder.run(createPosition(1)));
+        assertEquals(1, ladder.run(createPosition(2)));
+        assertEquals(3, ladder.run(createPosition(3)));
+
     }
 
     @Test
