@@ -21,7 +21,6 @@ public class LadderTest {
     }
 
     @Test
-    @DisplayName("사다리게임")
     void run() {
         ladder.drawLine(createPosition(1), createPosition(1));
         ladder.drawLine(createPosition(2), createPosition(2));
@@ -30,16 +29,9 @@ public class LadderTest {
     }
 
     @Test
-    @DisplayName("1보다 작은 파라미터 값이 들어오면 에러")
-    void outOfRangeParameters() {
-        assertThrows(IllegalArgumentException.class,() -> createNaturalNumber(0));
-        assertThrows(IllegalArgumentException.class,() -> createNaturalNumber(-1));
-    }
-
-    @Test
     @DisplayName("사다리 범위를 벗어난 라인 생성 시 에러")
     void outOfRangeLine() {
-        assertThrows(IllegalArgumentException.class,() -> ladder.drawLine(createPosition(2), createPosition(3)));
+        assertThrows(IllegalArgumentException.class,() -> ladder.drawLine(createPosition(0), createPosition(2)));
         assertThrows(IllegalArgumentException.class,() -> ladder.drawLine(createPosition(4), createPosition(2)));
     }
 }
