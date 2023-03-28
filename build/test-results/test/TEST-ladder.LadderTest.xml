@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ladder.LadderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-28T06:02:06" hostname="imsubin-ui-MacBookAir.local" time="0.036">
+<testsuite name="ladder.LadderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-28T11:00:57" hostname="imsubin-ui-MacBookAir.local" time="0.042">
   <properties/>
-  <testcase name="사다리 범위를 벗어난 라인 생성 시 에러" classname="ladder.LadderTest" time="0.036"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="run()" classname="ladder.LadderTest" time="0.042"/>
+  <system-out><![CDATA[Before
+1* -1 0 
+0 1 -1 
+0 1 -1 
+After
+1 -1* 0 
+0 1 -1 
+0 1 -1 
+Before
+1 -1 0 
+0 1* -1 
+0 1 -1 
+After
+1 -1 0 
+0 1 -1* 
+0 1 -1 
+Before
+1 -1 0 
+0 1 -1 
+0 1 -1* 
+After
+1 -1 0 
+0 1 -1 
+0 1* -1 
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

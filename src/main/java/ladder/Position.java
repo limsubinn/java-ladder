@@ -32,6 +32,10 @@ public class Position {
         return this.position > position;
     }
 
+    public boolean isEqual(int position) {
+        return this.position == position;
+    }
+
     public static Position createPosition(int position) {
         validatePosition(position);
         return new Position(position);

@@ -16,6 +16,10 @@ public class Node {
         return direction.equals(Direction.LEFT);
     }
 
+    public int getNodeDirection() {
+        return direction.getDirection();
+    }
+
     public static Node createRightNode() {
         return new Node(Direction.RIGHT);
     }
