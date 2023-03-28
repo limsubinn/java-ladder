@@ -1,7 +1,5 @@
 package ladder;
 
-import static ladder.Direction.*;
-
 public class Row {
 
     Node[] nodes;
@@ -39,7 +37,7 @@ public class Row {
     private void validatePosition(Position y) {
         validatePositionSize(y);
         if (nodes[y.getPosition()].isLeft() ||
-                nodes[y.getPosition() + 1].isRight()) {
+                nodes[y.getPosition()].isRight()) {
             throw new IllegalArgumentException("이미 사다리가 생성된 줄입니다.");
         }
     }
