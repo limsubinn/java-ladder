@@ -2,7 +2,7 @@ package ladder;
 
 import static ladder.NaturalNumber.createNaturalNumber;
 
-public class LadderCreator {
+public class LadderCreator implements LadderCreatorInterface {
 
     Row[] rows;
     LadderSize ladderSize;
@@ -16,24 +16,14 @@ public class LadderCreator {
         }
     }
 
-//    public LadderCreator(NaturalNumber row, NaturalNumber numberOfPerson) {
-//        rows = new Row[row.getNumber()+1];
-//        for (int i=1; i<=row.getNumber(); i++) {
-//            rows[i] = new Row(numberOfPerson);
-//        }
-//    }
-
+    @Override
     public void drawLine(LadderPosition ladderPosition) {
         validatePositionSize(ladderPosition.getX());
         rows[ladderPosition.getPositionX()].drawLine(ladderPosition.getY());
     }
 
-//    public void drawLine(Position x, Position y) {
-//        validatePositionSize(x);
-//        rows[x.getPosition()].drawLine(y);
-//    }
-
-    public Row[] getRows() {
+    @Override
+    public Row[] getRow() {
         return rows;
     }
 

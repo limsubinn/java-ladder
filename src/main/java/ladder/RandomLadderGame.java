@@ -1,6 +1,8 @@
 package ladder;
 
+import static ladder.LadderPosition.createLadderPosition;
 import static ladder.LadderSize.createLadderSize;
+import static ladder.Position.createPosition;
 
 public class RandomLadderGame {
 
@@ -12,18 +14,12 @@ public class RandomLadderGame {
         randomLadderCreator = new RandomLadderCreator(ladderSize);
     }
 
-//    public RandomLadderGame(NaturalNumber row, NaturalNumber numberOfPerson) {
-//        LadderSize ladderSize = createLadderSize(row, numberOfPerson);
-//        randomLadderCreator = new RandomLadderCreator(ladderSize);
-////        randomLadderCreator = new RandomLadderCreator(row, numberOfPerson);
-//    }
-
     public void drawLine() {
-        randomLadderCreator.drawLine();
+        randomLadderCreator.drawLine(createLadderPosition(createPosition(1), createPosition(1)));
     }
 
     public int run(Position position) {
-        LadderRunner ladderRunner = new LadderRunner(randomLadderCreator.getRows());
+        LadderRunner ladderRunner = new LadderRunner(randomLadderCreator.getRow());
         return ladderRunner.run(position);
     }
 }

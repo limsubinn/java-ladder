@@ -1,7 +1,5 @@
 package ladder;
 
-import java.util.Objects;
-
 public class LadderPosition {
     Position x;
     Position y;

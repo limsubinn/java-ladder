@@ -32,12 +32,6 @@ public class Row {
         }
     }
 
-    private void validatePositionSize(Position y) {
-        if (!y.isSmaller(nodes.length-1)) {
-            throw new IllegalArgumentException("라인을 만들 줄이 사다리 라인 개수의 범위 안에 있어야 합니다.");
-        }
-    }
-
     public String rowToString(LadderPosition ladderPosition, Position x) {
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -59,6 +53,12 @@ public class Row {
 
     public boolean noLines(Position y) {
         return (nodes[y.getPosition()].isCenter() && nodes[y.getNextPosition()].isCenter());
+    }
+
+    private void validatePositionSize(Position y) {
+        if (!y.isSmaller(nodes.length-1)) {
+            throw new IllegalArgumentException("라인을 만들 줄이 사다리 라인 개수의 범위 안에 있어야 합니다.");
+        }
     }
 
     private void validatePosition(Position y) {

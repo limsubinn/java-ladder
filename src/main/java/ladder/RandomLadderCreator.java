@@ -4,11 +4,8 @@ import java.util.HashSet;
 
 import static ladder.LadderPosition.createLadderPosition;
 
-public class RandomLadderCreator {
+public class RandomLadderCreator implements LadderCreatorInterface {
 
-
-//    NaturalNumber row;
-//    NaturalNumber numberOfPerson;
     LadderSize ladderSize;
     LadderCreator ladderCreator;
 
@@ -17,13 +14,16 @@ public class RandomLadderCreator {
         ladderCreator = new LadderCreator(ladderSize);
     }
 
-    //    public RandomLadderCreator(NaturalNumber row, NaturalNumber numberOfPerson) {
-//        ladderCreator = new LadderCreator(row, numberOfPerson);
-//        this.row = row;
-//        this.numberOfPerson = numberOfPerson;
-//    }
+    public int numberOfLine() {
+        return (int) (ladderSize.getLadderSize() * 0.3);
+    }
 
-    public void drawLine() {
+    public int generateRandomNumber() {
+        return (int) (Math.random() * (ladderSize.getRowValue() * (ladderSize.getNumberOfPersonValue() - 1)));
+    }
+
+    @Override
+    public void drawLine(LadderPosition ladderPosition) {
         HashSet<LadderPosition> lines = new HashSet<>();
 
         while (lines.size() < numberOfLine()) {
@@ -36,23 +36,15 @@ public class RandomLadderCreator {
 
             // 라인을 그릴 수 있으면 (존재하는 라인이 없으면)
             if (ladderCreator.rows[x].noLines(positionY)) {
-                LadderPosition ladderPosition = createLadderPosition(positionX, positionY);
-                lines.add(ladderPosition);
-                ladderCreator.drawLine(ladderPosition);
+                LadderPosition position = createLadderPosition(positionX, positionY);
+                lines.add(position);
+                ladderCreator.drawLine(position);
             }
         }
     }
 
-    public int numberOfLine() {
-        return (int) (ladderSize.getLadderSize() * 0.3);
+    @Override
+    public Row[] getRow() {
+        return ladderCreator.getRow();
     }
-
-    public int generateRandomNumber() {
-        return (int) (Math.random() * (ladderSize.getRowValue() * (ladderSize.getNumberOfPersonValue() - 1)));
-    }
-
-    public Row[] getRows() {
-        return ladderCreator.getRows();
-    }
-
 }
