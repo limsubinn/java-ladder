@@ -1,4 +1,9 @@
-package ladder;
+package ladder.creator;
+
+import ladder.LadderPosition;
+import ladder.LadderSize;
+import ladder.Position;
+import ladder.Row;
 
 import static ladder.NaturalNumber.createNaturalNumber;
 

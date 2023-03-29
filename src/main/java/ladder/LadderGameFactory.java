@@ -1,7 +1,7 @@
 package ladder;
 
-import static ladder.LadderPosition.createLadderPosition;
-import static ladder.Position.createPosition;
+import ladder.creator.LadderCreator;
+import ladder.creator.RandomLadderCreator;
 
 public class LadderGameFactory {
 

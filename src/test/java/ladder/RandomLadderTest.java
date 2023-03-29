@@ -13,7 +13,6 @@ public class RandomLadderTest {
         LadderSize ladderSize = LadderSize.createLadderSize(row, numberOfPerson);
         RandomLadderGame randomLadderGame = LadderGameFactory.createRandomLadderGame(ladderSize);
 
-//        randomLadderGame.drawLine();
         randomLadderGame.run(createPosition(2));
     }
 }
