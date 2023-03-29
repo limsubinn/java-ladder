@@ -57,10 +57,13 @@ public class Row {
         return stringBuilder.toString();
     }
 
+    public boolean noLines(Position y) {
+        return (nodes[y.getPosition()].isCenter() && nodes[y.getNextPosition()].isCenter());
+    }
+
     private void validatePosition(Position y) {
         validatePositionSize(y);
-        if (nodes[y.getPosition()].isLeft() ||
-                nodes[y.getPosition()].isRight()) {
+        if (!noLines(y)) {
             throw new IllegalArgumentException("이미 사다리가 생성된 줄입니다.");
         }
     }

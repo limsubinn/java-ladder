@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ladder.RandomLadderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-29T05:36:21" hostname="imsubin-ui-MacBookAir.local" time="0.03">
+  <properties/>
+  <testcase name="randomLadderTest()" classname="ladder.RandomLadderTest" time="0.03"/>
+  <system-out><![CDATA[Before
+0 1* -1 0 0 
+0 1 -1 1 -1 
+0 1 -1 0 0 
+0 1 -1 0 0 
+1 -1 0 1 -1 
+After
+0 1 -1* 0 0 
+0 1 -1 1 -1 
+0 1 -1 0 0 
+0 1 -1 0 0 
+1 -1 0 1 -1 
+Before
+0 1 -1 0 0 
+0 1 -1* 1 -1 
+0 1 -1 0 0 
+0 1 -1 0 0 
+1 -1 0 1 -1 
+After
+0 1 -1 0 0 
+0 1* -1 1 -1 
+0 1 -1 0 0 
+0 1 -1 0 0 
+1 -1 0 1 -1 
+Before
+0 1 -1 0 0 
+0 1 -1 1 -1 
+0 1* -1 0 0 
+0 1 -1 0 0 
+1 -1 0 1 -1 
+After
+0 1 -1 0 0 
+0 1 -1 1 -1 
+0 1 -1* 0 0 
+0 1 -1 0 0 
+1 -1 0 1 -1 
+Before
+0 1 -1 0 0 
+0 1 -1 1 -1 
+0 1 -1 0 0 
+0 1 -1* 0 0 
+1 -1 0 1 -1 
+After
+0 1 -1 0 0 
+0 1 -1 1 -1 
+0 1 -1 0 0 
+0 1* -1 0 0 
+1 -1 0 1 -1 
+Before
+0 1 -1 0 0 
+0 1 -1 1 -1 
+0 1 -1 0 0 
+0 1 -1 0 0 
+1 -1* 0 1 -1 
+After
+0 1 -1 0 0 
+0 1 -1 1 -1 
+0 1 -1 0 0 
+0 1 -1 0 0 
+1* -1 0 1 -1 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

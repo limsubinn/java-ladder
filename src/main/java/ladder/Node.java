@@ -16,6 +16,10 @@ public class Node {
         return direction.equals(Direction.LEFT);
     }
 
+    public boolean isCenter() {
+        return direction.equals(Direction.CENTER);
+    }
+
     public int getNodeDirection() {
         return direction.getDirection();
     }
