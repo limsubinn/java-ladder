@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static ladder.LadderPosition.createLadderPosition;
 import static ladder.Position.*;
 import static ladder.Position.createPosition;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LadderPositionTest {
     @Test
@@ -25,7 +25,7 @@ public class LadderPositionTest {
         LadderPosition ladderPosition3 = createLadderPosition(createPosition(1), createPosition(3));
 
 
-        assertEquals(true, ladderPosition1.equals(ladderPosition2));
-        assertEquals(false, ladderPosition1.equals(ladderPosition3));
+        assertTrue(ladderPosition1.equals(ladderPosition2));
+        assertFalse(ladderPosition1.equals(ladderPosition3));
     }
 }
