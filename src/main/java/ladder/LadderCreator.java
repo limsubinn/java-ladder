@@ -1,20 +1,37 @@
 package ladder;
 
+import static ladder.NaturalNumber.createNaturalNumber;
+
 public class LadderCreator {
 
     Row[] rows;
+    LadderSize ladderSize;
 
-    public LadderCreator(NaturalNumber row, NaturalNumber numberOfPerson) {
-        rows = new Row[row.getNumber()+1];
-        for (int i=1; i<=row.getNumber(); i++) {
-            rows[i] = new Row(numberOfPerson);
+    public LadderCreator(LadderSize ladderSize) {
+        this.ladderSize = ladderSize;
+
+        rows = new Row[ladderSize.getRowValue() + 1];
+        for (int i=1; i<=ladderSize.getRowValue(); i++) {
+            rows[i] = new Row(createNaturalNumber(ladderSize.getNumberOfPersonValue()));
         }
     }
 
-    public void drawLine(Position x, Position y) {
-        validatePositionSize(x);
-        rows[x.getPosition()].drawLine(y);
+//    public LadderCreator(NaturalNumber row, NaturalNumber numberOfPerson) {
+//        rows = new Row[row.getNumber()+1];
+//        for (int i=1; i<=row.getNumber(); i++) {
+//            rows[i] = new Row(numberOfPerson);
+//        }
+//    }
+
+    public void drawLine(LadderPosition ladderPosition) {
+        validatePositionSize(ladderPosition.getX());
+        rows[ladderPosition.getPositionX()].drawLine(ladderPosition.getY());
     }
+
+//    public void drawLine(Position x, Position y) {
+//        validatePositionSize(x);
+//        rows[x.getPosition()].drawLine(y);
+//    }
 
     public Row[] getRows() {
         return rows;

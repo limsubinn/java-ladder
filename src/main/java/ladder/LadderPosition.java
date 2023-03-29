@@ -11,6 +11,14 @@ public class LadderPosition {
         this.y = y;
     }
 
+    public Position getX() {
+        return x;
+    }
+
+    public Position getY() {
+        return y;
+    }
+
     public int getPositionX() {
         return x.getPosition();
     }

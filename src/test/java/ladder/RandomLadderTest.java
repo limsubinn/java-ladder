@@ -10,7 +10,8 @@ public class RandomLadderTest {
     void randomLadderTest() {
         NaturalNumber row = createNaturalNumber(5);
         NaturalNumber numberOfPerson = createNaturalNumber(5);
-        RandomLadderGame randomLadderGame = new RandomLadderGame(row, numberOfPerson);
+        LadderSize ladderSize = LadderSize.createLadderSize(row, numberOfPerson);
+        RandomLadderGame randomLadderGame = new RandomLadderGame(ladderSize);
 
         randomLadderGame.drawLine();
         randomLadderGame.run(createPosition(2));
