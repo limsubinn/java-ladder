@@ -20,7 +20,7 @@ public class LadderTest {
         NaturalNumber numberOfPerson = createNaturalNumber(3);
         LadderSize ladderSize = createLadderSize(row, numberOfPerson);
 
-        ladder = new LadderGame(ladderSize);
+        ladder = LadderGameFactory.createLadderGame(ladderSize);
     }
 
     @Test

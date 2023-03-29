@@ -3,6 +3,7 @@ package ladder;
 import java.util.HashSet;
 
 import static ladder.LadderPosition.createLadderPosition;
+import static ladder.Position.createPosition;
 
 public class RandomLadderCreator implements LadderCreatorInterface {
 
@@ -31,8 +32,8 @@ public class RandomLadderCreator implements LadderCreatorInterface {
             int x = (randomNumber / (ladderSize.getNumberOfPersonValue() - 1)) + 1;
             int y = (randomNumber % (ladderSize.getNumberOfPersonValue() - 1)) + 1;
 
-            Position positionX = Position.createPosition(x);
-            Position positionY = Position.createPosition(y);
+            Position positionX = createPosition(x);
+            Position positionY = createPosition(y);
 
             // 라인을 그릴 수 있으면 (존재하는 라인이 없으면)
             if (ladderCreator.rows[x].noLines(positionY)) {

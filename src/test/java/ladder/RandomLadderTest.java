@@ -11,9 +11,9 @@ public class RandomLadderTest {
         NaturalNumber row = createNaturalNumber(5);
         NaturalNumber numberOfPerson = createNaturalNumber(5);
         LadderSize ladderSize = LadderSize.createLadderSize(row, numberOfPerson);
-        RandomLadderGame randomLadderGame = new RandomLadderGame(ladderSize);
+        RandomLadderGame randomLadderGame = LadderGameFactory.createRandomLadderGame(ladderSize);
 
-        randomLadderGame.drawLine();
+//        randomLadderGame.drawLine();
         randomLadderGame.run(createPosition(2));
     }
 }

@@ -6,17 +6,23 @@ import static ladder.Position.createPosition;
 
 public class RandomLadderGame {
 
-    LadderSize ladderSize;
+//    LadderSize ladderSize;
     RandomLadderCreator randomLadderCreator;
 
-    public RandomLadderGame(LadderSize ladderSize) {
-        this.ladderSize = ladderSize;
-        randomLadderCreator = new RandomLadderCreator(ladderSize);
+    public RandomLadderGame(RandomLadderCreator randomLadderCreator) {
+        this.randomLadderCreator = randomLadderCreator;
+        randomLadderCreator.drawLine(createLadderPosition(createPosition(1), createPosition(1)));
+
     }
 
-    public void drawLine() {
-        randomLadderCreator.drawLine(createLadderPosition(createPosition(1), createPosition(1)));
-    }
+//    public RandomLadderGame(LadderSize ladderSize) {
+//        this.ladderSize = ladderSize;
+//        randomLadderCreator = new RandomLadderCreator(ladderSize);
+//    }
+
+//    public void drawLine() {
+//        randomLadderCreator.drawLine(createLadderPosition(createPosition(1), createPosition(1)));
+//    }
 
     public int run(Position position) {
         LadderRunner ladderRunner = new LadderRunner(randomLadderCreator.getRow());
